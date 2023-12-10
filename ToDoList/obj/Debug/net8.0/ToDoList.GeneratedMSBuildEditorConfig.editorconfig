@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/orsn/Desktop/C\# Projects/ToDoListRider/ToDoList/Pages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/orsn/Desktop/C\# Projects/ToDoListRider/ToDoList/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -1,7 +1,11 @@
+using ToDoList.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
+builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<TaskService>();
 
 var app = builder.Build();
 
@@ -9,7 +13,6 @@ var app = builder.Build();
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
@@ -20,8 +23,15 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+// Add Swagger and Swagger UI middleware
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "V1");
+    // Redirect root to Swagger
+    c.RoutePrefix = string.Empty;
+});
+
+app.MapControllers();
 
 app.Run();
