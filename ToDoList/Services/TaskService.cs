@@ -6,7 +6,7 @@ using ToDoList.Entities;
 namespace ToDoList.Services
 {
     /// <summary>
-    /// Responsible for the business logic of the tasks.
+    /// Responsible for the business logic of the tasks (Singleton)
     /// </summary>
     public class TaskService
     {
