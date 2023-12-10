@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.DependencyInjection;
 using ToDoList.Entities;
 
 namespace ToDoList.Services
@@ -9,20 +10,16 @@ namespace ToDoList.Services
     /// </summary>
     public class DueDateCheckerService
     {
-        /// <summary>
-        /// List of tasks
-        /// </summary>
-        private readonly List<CustomerTask> _tasks;
+        private readonly IServiceProvider _serviceProvider;
 
         /// <summary>
-        /// Settings _tasks to be the list of tasks provided
+        /// Initializes a new instance of the
+        /// <see cref="DueDateCheckerService"/> class.
         /// </summary>
-        /// <param name="tasks">The list of tasks</param>
-        /// <exception cref="ArgumentNullException">If tasks is null</exception>
-        public DueDateCheckerService(List<CustomerTask> tasks)
+        /// <param name="serviceProvider">The service provider for dependency injection.</param>
+        public DueDateCheckerService(IServiceProvider serviceProvider)
         {
-            _tasks = tasks 
-                     ?? throw new ArgumentNullException(nameof(tasks));
+            _serviceProvider = serviceProvider;
         }
 
         /// <summary>
@@ -30,12 +27,29 @@ namespace ToDoList.Services
         /// </summary>
         public void CheckAndUpdateDueDates()
         {
+            // Retrieve the list of tasks from the service provider
+            var tasks = _serviceProvider.GetService<List<CustomerTask>>();
+
+            if (tasks == null)
+            {
+                throw new InvalidOperationException(
+                    "Unable to resolve tasks list from the service provider.");
+            }
+
             DateTime currentDate = DateTime.Now;
 
-            foreach (var task in _tasks)
+            foreach (var task in tasks)
             {
+                // For debugging purposes, you can add logs
+                Console.WriteLine($"Task ID: {task.Id}, Due Date: {task.DueDate}, Status: {task.TaskStatus}");
+
+                // Change the status to Overdue regardless of the conditions
+                task.TaskStatus = Status.Overdue;
+
                 if (task.TaskStatus == Status.Pending && task.DueDate < currentDate)
                 {
+                    // You can add logs to trace when the condition is met
+                    Console.WriteLine($"Task ID: {task.Id} is Overdue!");
                     task.TaskStatus = Status.Overdue;
                 }
             }

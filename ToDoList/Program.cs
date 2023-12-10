@@ -1,3 +1,5 @@
+
+using ToDoList.Entities;
 using ToDoList.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,10 +8,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
-// Setting Task Service as a Singleton,
+// Register the list of tasks
+builder.Services.AddSingleton<List<CustomerTask>>();
+
+// Setting Services as Singletons,
 // to ensure persistence of the tasks list
-// throughout the lifespan of the app.  
+// throughout the lifespan of the app, and ensuring that
+// all other services have one and only instance in the app.  
 builder.Services.AddSingleton<TaskService>();
+builder.Services.AddSingleton<DueDateCheckerService>();
+builder.Services.AddSingleton<SchedulerServices>();
+
+// Set up a background service to run SchedulerServices at regular intervals
+builder.Services.AddHostedService<SchedulerServices>();
 
 var app = builder.Build();
 
