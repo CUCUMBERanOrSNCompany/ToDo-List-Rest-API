@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using Microsoft.Extensions.DependencyInjection;
 using ToDoList.Entities;
 
 namespace ToDoList.Services
@@ -10,16 +7,25 @@ namespace ToDoList.Services
     /// </summary>
     public class DueDateCheckerService
     {
-        private readonly IServiceProvider _serviceProvider;
+        /// <summary>
+        /// The task service responsible for managing tasks.
+        /// </summary>
+        private readonly TaskService _taskService;
 
         /// <summary>
-        /// Initializes a new instance of the
-        /// <see cref="DueDateCheckerService"/> class.
+        /// The logger for logging messages.
         /// </summary>
-        /// <param name="serviceProvider">The service provider for dependency injection.</param>
-        public DueDateCheckerService(IServiceProvider serviceProvider)
+        private readonly ILogger<DueDateCheckerService> _logger;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DueDateCheckerService"/> class.
+        /// </summary>
+        /// <param name="taskService">The task service for managing tasks.</param>
+        /// <param name="logger">The logger for logging messages.</param>
+        public DueDateCheckerService(TaskService taskService, ILogger<DueDateCheckerService> logger)
         {
-            _serviceProvider = serviceProvider;
+            _taskService = taskService ?? throw new ArgumentNullException(nameof(taskService));
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         /// <summary>
@@ -27,32 +33,22 @@ namespace ToDoList.Services
         /// </summary>
         public void CheckAndUpdateDueDates()
         {
-            // Retrieve the list of tasks from the service provider
-            var tasks = _serviceProvider.GetService<List<CustomerTask>>();
-
-            if (tasks == null)
-            {
-                throw new InvalidOperationException(
-                    "Unable to resolve tasks list from the service provider.");
-            }
+            //_logger.LogInformation("Checking and updating due dates...");
 
             DateTime currentDate = DateTime.Now;
 
+            var tasks = _taskService.GetAllTasks();
+
             foreach (var task in tasks)
             {
-                // For debugging purposes, you can add logs
-                Console.WriteLine($"Task ID: {task.Id}, Due Date: {task.DueDate}, Status: {task.TaskStatus}");
-
-                // Change the status to Overdue regardless of the conditions
-                task.TaskStatus = Status.Overdue;
-
-                if (task.TaskStatus == Status.Pending && task.DueDate < currentDate)
+                if (task.TaskStatus == Status.Pending 
+                    && task.DueDate < currentDate)
                 {
-                    // You can add logs to trace when the condition is met
-                    Console.WriteLine($"Task ID: {task.Id} is Overdue!");
                     task.TaskStatus = Status.Overdue;
                 }
             }
+
+            //_logger.LogInformation("Check and update complete.");
         }
     }
 }

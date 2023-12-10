@@ -1,6 +1,13 @@
 
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using ToDoList.Entities;
 using ToDoList.Services;
+using System;
+using System.Collections.Generic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,16 +18,20 @@ builder.Services.AddSwaggerGen();
 // Register the list of tasks
 builder.Services.AddSingleton<List<CustomerTask>>();
 
-// Setting Services as Singletons,
-// to ensure persistence of the tasks list
-// throughout the lifespan of the app, and ensuring that
-// all other services have one and only instance in the app.  
+// Register services
 builder.Services.AddSingleton<TaskService>();
 builder.Services.AddSingleton<DueDateCheckerService>();
 builder.Services.AddSingleton<SchedulerServices>();
 
 // Set up a background service to run SchedulerServices at regular intervals
 builder.Services.AddHostedService<SchedulerServices>();
+
+// Configure logging
+builder.Services.AddLogging(loggingBuilder =>
+{
+    loggingBuilder.AddConsole();
+    // Add any additional logging configuration you need
+});
 
 var app = builder.Build();
 
