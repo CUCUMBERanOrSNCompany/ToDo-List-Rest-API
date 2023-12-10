@@ -22,7 +22,7 @@ namespace ToDoList.Services
         /// <summary>
         /// Dictating the sleeping time between every two calls to the service.
         /// </summary>
-        private readonly int _sleepDurationInMinutes = 1;
+        private readonly int _sleepDurationInMinutes = 1440;
 
         /// <summary>
         /// Dependency Constructor
