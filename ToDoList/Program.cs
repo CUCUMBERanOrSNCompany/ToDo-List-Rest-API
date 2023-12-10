@@ -5,6 +5,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
+
+// Setting Task Service as a Singleton,
+// to ensure persistence of the tasks list
+// throughout the lifespan of the app.  
 builder.Services.AddSingleton<TaskService>();
 
 var app = builder.Build();
@@ -23,7 +27,7 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-// Add Swagger and Swagger UI middleware
+// Adding Swagger and Swagger UI middleware
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
