@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/scopedcss/projectbundle/ToDoList.bundle.scp.css",
-      "PackagePath": "staticwebassets/ToDoList.bundle.scp.css"
-    },
-    {
       "Id": "/Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/wwwroot/css/site.css",
       "PackagePath": "staticwebassets/css/site.css"
     },

@@ -100,8 +100,6 @@
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/ToDoList.csproj.CoreCompileInputs.cache
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/ToDoList.MvcApplicationPartsAssemblyInfo.cs
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/ToDoList.MvcApplicationPartsAssemblyInfo.cache
-/Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/ToDoList.RazorAssemblyInfo.cache
-/Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/ToDoList.RazorAssemblyInfo.cs
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/ToDoList.sourcelink.json
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/staticwebassets.build.json
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/staticwebassets.development.json
@@ -110,9 +108,7 @@
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ToDoList.props
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ToDoList.props
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/staticwebassets.pack.json
-/Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/scopedcss/bundle/ToDoList.styles.css
-/Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/scopedcss/projectbundle/ToDoList.bundle.scp.css
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/ToDoList.csproj.CopyComplete
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/ToDoList.dll
 /Users/orsn/Desktop/C# Projects/ToDoListRider/ToDoList/obj/Debug/net8.0/refint/ToDoList.dll
