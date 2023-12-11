@@ -31,13 +31,20 @@ This API returns a single Task with the corresponding Id (If exists). It returns
 # Post (CreateTask(Task)):
 Arguments: Task details
 
-Returns: Result
+Returns: Result of request.
 
 <img width="1135" alt="Screenshot 2023-12-11 at 17 58 42" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/96fabdf8-05bc-461c-91f3-3ecc0e5d659e">
 
 This API gets task details (Title, Description, Due Date and State) and create a task which is added to the tasks.
 
+# Put (UpdateTask(Id, Task)):
+Arguments: Id, Task Details
 
+Returns: Result of request.
+
+<img width="1139" alt="Screenshot 2023-12-11 at 18 04 41" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/3978728b-a034-4f3d-932e-250ddb18206b">
+
+This API gets a task Id and task details, and update the task with the corresponding task Id with the provided details.
 
 
 
