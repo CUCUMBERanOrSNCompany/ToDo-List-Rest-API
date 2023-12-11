@@ -155,7 +155,7 @@ The main logic consists of the following components:
 # Tests Project
 
 To run the tests, please run the following command:
-ToDoList % dotnet test
+ToDoList % **dotnet test**
 
 <img width="1436" alt="Screenshot 2023-12-11 at 19 32 34" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/09ff032e-d6c3-4784-b32f-62a0630fc9a8">
 
