@@ -183,13 +183,15 @@ Besides dozens of manual testing I done, I also created a Unit Tests suite, part
 
 
 # Additional Notes:
- 1. I did not implemented UI, since I used Swagger to conveniently display and test the APIs. I have some beautiful Front-End projects such as my [website](https://orsncompany.com/) which I developed with React. My seven published mobile games is another testimony to my Front-End capabilities.
+1. I did not implemented UI, since I used Swagger to conveniently display and test the APIs. I have some beautiful Front-End projects such as my [website](https://orsncompany.com/) which I developed with React. My seven published mobile games is another testimony to my Front-End capabilities.
+
  2. During development, I realized that Microsoft terminated Visual Studio for Mac - The IDE I used, therefore I moved to Rider and learned the IDE while working on development.
 
 
       
    
    
+
 
 
 

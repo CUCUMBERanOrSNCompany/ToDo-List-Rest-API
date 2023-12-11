@@ -56,8 +56,7 @@ public class CustomerTask
     /// Storing the actual due date value
     /// </summary>
     private DateTime _dueDate;
-
-
+    
     /// <summary>
     /// The current status of the task
     /// </summary>
