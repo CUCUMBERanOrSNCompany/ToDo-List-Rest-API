@@ -105,16 +105,21 @@ The main logic consists of the following components:
 
 **Services**
    1. _>>ITaskService<<_
-      This interface outlines the contract of TaskServices.
-      I. + GetAllTasks(): List<CustomerTask> (Supports GetTasks()).
+      This interface outlines the contract of TaskServices. Initiated as a Singleton (TaskService) at Program.Cs to ensure consistancy of data through the lifespan of the app, and interaction with the same instance of the interface implementor.
+      I. + GetAllTasks(): List<CustomerTask> (Supports GetTasks() from TasksController).
 
-      II. + GetTaskById(Id: Guid): CustomerTask (Supports GetTask(id)).
+      II. + GetTaskById(Id: Guid): CustomerTask (Supports GetTask(id) from TasksController).
 
-      III. + CreateTask(task: CustomerTask): void (Supports CreateTask(task)).
+      III. + CreateTask(task: CustomerTask): void (Supports CreateTask(task) from TasksController).
 
-      IV. + UpdateTask(id: Guid, updatedTask: CustomerTask): void (Supports UpdateTask(id, updatedTask)).
+      IV. + UpdateTask(id: Guid, updatedTask: CustomerTask): void (Supports UpdateTask(id, updatedTask) from TasksController).
 
-      V. + DeleteTask(id: Guid): void (Supports DeleteTask(id)).
+      V. + DeleteTask(id: Guid): void (Supports DeleteTask(id) from TasksController).
+
+   2. _TaskService implements ITaskService_
+      I. - _tasks: List<CustomerTask> (Instentiate a list of tasks). Since this class is Singleton, the list is persistant from the methods.
+
+      II. + TaskService() (Instantiate _tasks).
 
 
       
