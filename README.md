@@ -12,6 +12,7 @@ The customer can interact with the system via Swagger. Below are the system's AP
 
 # Get (GetTasks()):
 Arguments: None
+
 Returns: All tasks
 
 <img width="1136" alt="Screenshot 2023-12-11 at 17 36 06" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/afef8629-73dc-44ea-a82f-e0e8e786d56e">
@@ -20,9 +21,23 @@ This API returns all the tasks.
 
 # Get (GetTask(Id)):
 Arguments: Task Id
+
 Returns: The task with the corresponding Id.
 
 <img width="1155" alt="Screenshot 2023-12-11 at 17 50 55" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/2ca59639-1e0b-4876-9b60-0363ae7c6fa3">
 
 This API returns a single Task with the corresponding Id (If exists). It returns an empty response if the Id is invalid.
+
+# Post (CreateTask(Task)):
+Arguments: Task details
+
+Returns: Result
+
+<img width="1135" alt="Screenshot 2023-12-11 at 17 58 42" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/96fabdf8-05bc-461c-91f3-3ecc0e5d659e">
+
+This API gets task details (Title, Description, Due Date and State) and create a task which is added to the tasks.
+
+
+
+
 
