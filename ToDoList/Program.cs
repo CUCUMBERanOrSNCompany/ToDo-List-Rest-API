@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<List<CustomerTask>>();
 
 // Register services
-builder.Services.AddSingleton<TaskService>();
+builder.Services.AddSingleton<ITaskService, TaskService>();
 builder.Services.AddSingleton<DueDateCheckerService>();
 builder.Services.AddSingleton<SchedulerServices>();
 

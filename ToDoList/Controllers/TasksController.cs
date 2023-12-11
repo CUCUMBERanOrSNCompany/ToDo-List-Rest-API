@@ -14,15 +14,16 @@ public class TasksController : ControllerBase
     /// <summary>
     /// task service object (Dependency Injected)
     /// </summary>
-    private readonly TaskService _taskService;
+    private readonly ITaskService _taskService;
 
     /// <summary>
     /// Dependencies constructor
     /// </summary>
     /// <param name="taskService">Task Service dependency</param>
-    public TasksController(TaskService taskService)
+    public TasksController(ITaskService taskService)
     {
-        _taskService = taskService;
+        _taskService = taskService 
+                       ?? throw new ArgumentNullException(nameof(taskService));
     }
 
     /// <summary>
