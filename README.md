@@ -88,7 +88,9 @@ The main logic consists of the following components:
 
 **Controllers**
 1. _TasksController_ extends ControllerBase:
+
    This class acts as the controller. It uses a Constructor Injection to get its dependencies (Which is the abstract form of TaskService (ITaskService)), so it is easier to mock the system in the Unit Tests suite, and to follow the Dependency Inversion principle. Below are the class members:
+
    I. - _taskService: ITaskService (The dependency of the controller is the Task Service which is instentiated as a Singleton to keep the interaction with a specific instance of the service and keep the data persistant).
 
    II. + TasksController(taskService: ITaskService) (Dependency Constructor).
@@ -105,7 +107,9 @@ The main logic consists of the following components:
 
 **Services**
    1. _>>ITaskService<<_
+
       This interface outlines the contract of TaskServices. Initiated as a Singleton (TaskService) at Program.Cs to ensure consistancy of data through the lifespan of the app, and interaction with the same instance of the interface implementor.
+   
       I. + GetAllTasks(): List<CustomerTask> (Supports GetTasks() from TasksController).
 
       II. + GetTaskById(Id: Guid): CustomerTask (Supports GetTask(id) from TasksController).
@@ -117,12 +121,15 @@ The main logic consists of the following components:
       V. + DeleteTask(id: Guid): void (Supports DeleteTask(id) from TasksController).
 
    2. _TaskService implements ITaskService_
+
       I. - _tasks: List<CustomerTask> (Instentiate a list of tasks). Since this class is Singleton, the list is persistant from the methods.
 
       II. + TaskService() (Instantiate _tasks).
 
    3. _DueDateCheckerService_
+
       This service is checking the list of tasks and change the status of tasks passed their deadline to Overdue.
+
       I. - _taskService: ITaskService (Referring to the TaskService Singleton).
 
       II. - _logger: ILogger<DueDateCheckerService> (Provides ability to Log messages).
@@ -131,7 +138,9 @@ The main logic consists of the following components:
 
       IV. + CheckAndUpdateDueDates(): void (The main method of this service. It gets the current time, then it iterates on the list of tasks via _taskService.GetAllTasks(), and update the status of each task if needed).
 
-      
+    4. _SchedulerServices extends BackgroundService_
+
+       This service is running the services that need to be run on schedule (DueDateCheckerService), using Sleep logic.
 
 
       
