@@ -26,7 +26,7 @@ Returns: The task with the corresponding Id.
 
 <img width="1155" alt="Screenshot 2023-12-11 at 17 50 55" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/2ca59639-1e0b-4876-9b60-0363ae7c6fa3">
 
-This API returns a single Task with the corresponding Id (If exists). It returns an empty response if the Id is invalid.
+This API returns a single Task with the corresponding Id (If exists). It returns an appropriate message if the Id is invalid.
 
 # Post (CreateTask(Task)):
 Arguments: Task details
@@ -186,6 +186,8 @@ Besides dozens of manual testing I done, I also created a Unit Tests suite, part
 1. I did not implemented UI, since I used Swagger to conveniently display and test the APIs. I have some beautiful Front-End projects such as my [website](https://orsncompany.com/) which I developed with React. My seven published mobile games is another testimony to my Front-End capabilities.
 
  2. During development, I realized that Microsoft terminated Visual Studio for Mac - The IDE I used, therefore I moved to Rider and learned the IDE while working on development.
+
+3. I used in-memory storage.
 
 
       
