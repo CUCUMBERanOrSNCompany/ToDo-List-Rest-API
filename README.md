@@ -121,6 +121,18 @@ The main logic consists of the following components:
 
       II. + TaskService() (Instantiate _tasks).
 
+   3. _DueDateCheckerService_
+      This service is checking the list of tasks and change the status of tasks passed their deadline to Overdue.
+      I. - _taskService: ITaskService (Referring to the TaskService Singleton).
+
+      II. - _logger: ILogger<DueDateCheckerService> (Provides ability to Log messages).
+
+      III. + DueDateCheckerService(taskService: ITaskService, logger: ILogger<DueDateCheckerService>) (Dependency constructor).
+
+      IV. + CheckAndUpdateDueDates(): void (The main method of this service. It gets the current time, then it iterates on the list of tasks via _taskService.GetAllTasks(), and update the status of each task if needed).
+
+      
+
 
       
    
