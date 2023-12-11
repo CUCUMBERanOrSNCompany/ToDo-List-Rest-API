@@ -104,7 +104,7 @@ The main logic consists of the following components:
    VII. + DeleteTask(id: Guid): IActionResult (Explained at the APIs section).
 
 **Services**
-   1. _<<ITaskService>>_
+   1. _>>ITaskService<<_
       This interface outlines the contract of TaskServices.
       I. + GetAllTasks(): List<CustomerTask> (Supports GetTasks()).
 
