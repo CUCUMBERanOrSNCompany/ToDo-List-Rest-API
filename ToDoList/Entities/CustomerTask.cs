@@ -42,10 +42,10 @@ public class CustomerTask
         
         set
         {
-            // Checks if the provided due date is in the future/Provided at all.
-            if (value < DateTime.Now)
+            // Checks if due date provided.
+            if (value == DateTime.MinValue)
             {
-                throw new ArgumentException($"Due date must be in the future.");
+                throw new ArgumentException($"You must provide a due date.");
             }
             
             _dueDate = value;

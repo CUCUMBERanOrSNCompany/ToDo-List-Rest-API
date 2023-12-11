@@ -8,7 +8,7 @@ namespace ToDoList.Services
     /// <summary>
     /// Responsible for the business logic of the tasks (Singleton)
     /// </summary>
-    public class TaskService
+    public class TaskService : ITaskService
     {
         /// <summary>
         /// List of the tasks

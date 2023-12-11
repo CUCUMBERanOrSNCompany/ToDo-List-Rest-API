@@ -14,7 +14,7 @@ namespace Tests
         public void CheckAndUpdateDueDates_Should_UpdateOverdueTasks()
         {
             // Arrange
-            var mockTaskService = new Mock<TaskService>();
+            var mockTaskService = new Mock<ITaskService>();
             var mockLogger = new Mock<ILogger<DueDateCheckerService>>();
 
             var dueDateCheckerService = new DueDateCheckerService(mockTaskService.Object, mockLogger.Object);

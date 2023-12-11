@@ -10,7 +10,7 @@ namespace ToDoList.Services
         /// <summary>
         /// The task service responsible for managing tasks.
         /// </summary>
-        private readonly TaskService _taskService;
+        private readonly ITaskService _taskService;
 
         /// <summary>
         /// The logger for logging messages.
@@ -22,7 +22,7 @@ namespace ToDoList.Services
         /// </summary>
         /// <param name="taskService">The task service for managing tasks.</param>
         /// <param name="logger">The logger for logging messages.</param>
-        public DueDateCheckerService(TaskService taskService, ILogger<DueDateCheckerService> logger)
+        public DueDateCheckerService(ITaskService taskService, ILogger<DueDateCheckerService> logger)
         {
             _taskService = taskService ?? throw new ArgumentNullException(nameof(taskService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
