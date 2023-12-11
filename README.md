@@ -46,5 +46,14 @@ Returns: Result of request.
 
 This API gets a task Id and task details, and update the task with the corresponding task Id with the provided details.
 
+# Delete (DeleteTask(Id)):
+Arguments: Id
+
+Returns: Result of request.
+
+<img width="1147" alt="Screenshot 2023-12-11 at 18 11 35" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/e5771374-a82b-4532-bb5e-9cdab000d8db">
+
+This API gets a task Id, and delete the task with the corresponding Id, if valid.
+
 
 
