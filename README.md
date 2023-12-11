@@ -150,6 +150,38 @@ The main logic consists of the following components:
 
       IV. ExecuteAsync(stoppingToken: CancellationToken) : async Task (The main logic of the service. It runs in a loop until a cancellation token is provided. It runs the services that need to be called in a schedule (DueDateCheckerService), and awaiting for _sleepDurationInMinutes period of time - 1440 minutes).
 
+**All services are Singletons**
+
+# Tests Project
+
+To run the tests, please run the following command:
+ToDoList % dotnet test
+
+<img width="1436" alt="Screenshot 2023-12-11 at 19 32 34" src="https://github.com/CUCUMBERanOrSNCompany/ToDo-List-Rest-API/assets/70776104/09ff032e-d6c3-4784-b32f-62a0630fc9a8">
+
+Besides dozens of manual testing I done, I also created a Unit Tests suite, particularly to test the DueDateCheckerService. The suite consists of five tests:
+
+**DueDateCheckerService:**
+
+1. We set a task with state pending and past due date.
+   We expect the DueDateCheckerService to update its state to overdue.
+
+2. We set a task with state pending and future due date.
+   We expect the DueDateCheckerService NOT to update its state.
+
+3. We set a task with state In_Progress and past due date.
+   We expect the DueDateCheckerService NOT to update its state.
+
+4. We set a task with state Completed and past due date.
+   We expect the DueDateCheckerService NOT to update its state.
+
+**TaskService:**
+
+5. GetAllTasks:
+   We pass two tasks.
+   We expect to get a result which is a list with two tasks.
+
+
 
       
    
