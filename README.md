@@ -138,9 +138,17 @@ The main logic consists of the following components:
 
       IV. + CheckAndUpdateDueDates(): void (The main method of this service. It gets the current time, then it iterates on the list of tasks via _taskService.GetAllTasks(), and update the status of each task if needed).
 
-    4. _SchedulerServices extends BackgroundService_
+   4. _SchedulerServices extends BackgroundService_
 
-       This service is running the services that need to be run on schedule (DueDateCheckerService), using Sleep logic.
+      This service is running the services that need to be run on schedule (DueDateCheckerService), using Sleep logic.
+
+      I. - _services: IServiceProvider (List of services that need to be run on schedule)
+
+      II. - _sleepDurationInMinutes : int (Dictates the sleep duration between each two runs of a service).
+
+      III. + SchedulerServices(services: IServiceProvider) (Dependency Constructor that get the services that need to be managed by this service).
+
+      IV. ExecuteAsync(stoppingToken: CancellationToken) : async Task (The main logic of the service. It runs in a loop until a cancellation token is provided. It runs the services that need to be called in a schedule (DueDateCheckerService), and awaiting for _sleepDurationInMinutes period of time - 1440 minutes).
 
 
       
