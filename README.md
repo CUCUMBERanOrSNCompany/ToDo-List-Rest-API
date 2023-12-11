@@ -83,5 +83,27 @@ The main logic consists of the following components:
 
    VIII. + CustomerTask() (Instantiate a task object with a unique Id).
 
+2. _Status_:
+   An enum that stores the available statuses of tasks.
+
+**Controllers**
+1. _TasksController_ extends ControllerBase:
+   This class acts as the controller. It uses a Constructor Injection to get its dependencies (Which is the abstract form of TaskService (ITaskService)), so it is easier to mock the system in the Unit Tests suite, and to follow the Dependency Inversion principle. Below are the class members:
+   I. - _taskService: ITaskService (The dependency of the controller is the Task Service which is instentiated as a Singleton to keep the interaction with a specific instance of the service and keep the data persistant).
+
+   II. + TasksController(taskService: ITaskService) (Dependency Constructor).
+
+   III. + GetTasks(): IActionResult (Explained at the APIs section).
+
+   IV. + GetTask(id: Guid): IActionResult (Explained at the APIs section).
+
+   V. + CreateTask(task: CustomerTask): IActionResult (Explained at the APIs section).
+
+   VI. + UpdateTask(id: Guid, updatedTask: CustomerTask): IActionResult (Explained at the APIs section).
+
+   VII. + DeleteTask(id: Guid): : IActionResult (Explained at the APIs section).
+   
+   
+
 
 
