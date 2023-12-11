@@ -55,5 +55,33 @@ Returns: Result of request.
 
 This API gets a task Id, and delete the task with the corresponding Id, if valid.
 
+# Structure of The Project:
+The project consists of two projects:
+
+1. The main project with the logic of the tasks system.
+2. Tests project consists of five tests.
+
+# The Main Project Structure:
+The main logic consists of the following components:
+
+**Entities**
+1. _CustomerTask_:
+   A class that defines the structure of the Task object. It consists of the following class members:
+   I. + Title: String (Property with basic checks).
+
+   II. - _title: String (Storing the actual title of the task if deemed valid by Title).
+
+   III. + Description: String (Holds the description of the task).
+
+   IV. + DueDate: DateTime (Property with basic checks).
+
+   V. - _dueDate: DateTime (Storing the actual due date of the task if deemed valid by DueDate).
+
+   VI. + TaskStatus: Status (Holds the status of the task).
+
+   VII. + Id: Guid (Holds the unique Id of the task - Set up at the constructor).
+
+   VIII. + CustomerTask() (Instantiate a task object with a unique Id).
+
 
 
