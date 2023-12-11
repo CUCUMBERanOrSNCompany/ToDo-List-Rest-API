@@ -101,7 +101,23 @@ The main logic consists of the following components:
 
    VI. + UpdateTask(id: Guid, updatedTask: CustomerTask): IActionResult (Explained at the APIs section).
 
-   VII. + DeleteTask(id: Guid): : IActionResult (Explained at the APIs section).
+   VII. + DeleteTask(id: Guid): IActionResult (Explained at the APIs section).
+
+**Services**
+   1. _<<ITaskService>>_
+      This interface outlines the contract of TaskServices.
+      I. + GetAllTasks(): List<CustomerTask> (Supports GetTasks()).
+
+      II. + GetTaskById(Id: Guid): CustomerTask (Supports GetTask(id)).
+
+      III. + CreateTask(task: CustomerTask): void (Supports CreateTask(task)).
+
+      IV. + UpdateTask(id: Guid, updatedTask: CustomerTask): void (Supports UpdateTask(id, updatedTask)).
+
+      V. + DeleteTask(id: Guid): void (Supports DeleteTask(id)).
+
+
+      
    
    
 
